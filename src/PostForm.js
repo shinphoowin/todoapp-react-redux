@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import EditComponent from './EditComponent';
 
 class PostForm extends Component{
 
@@ -18,7 +19,8 @@ class PostForm extends Component{
 		const formObj = {
 			id: new Date(),
 			title,
-			message
+			message,
+			editing: false
 			// title1,
 			// message1
 		}
@@ -32,15 +34,24 @@ class PostForm extends Component{
 		this.refs.getTitle.value = '';
 		this.refs.getMessage.value = '';
 	}
+
 	render(){
-		// console.log(this.props);
-		console.log(this.props.posts.length);
-		var getpost = this.props.posts.map(post=> 
-			<li key={post.id}>
-        <h2>{post.title}</h2>
-        <p>{post.message}</p>
-        <button>Edit</button>
-        <button onClick={()=>this.props.dispatch({type: 'DELETE_POST',id: post.id})}>Delete</button>
+		// console.log(this.props.posts)
+		var getpost = this.props.posts.map((post)=> 
+     
+      <li key={post.id}>
+			  {
+			  	post.editing
+			  	? <EditComponent postfordefaultVal={post} key={post.id}/> 
+			  	: 	
+			  	<div key={post.id}>
+            <h2>{post.title}</h2>
+            <p>{post.message}</p>
+            <button onClick={() => this.props.dispatch({type: 'EDIT_POST',id: post.id})}>Edit</button>
+            <button onClick={()=>this.props.dispatch({type: 'DELETE_POST',id: post.id})}>Delete</button>
+            {console.log(post.editing)}
+          </div>
+        }
       </li>
 		);
 		console.log(this.props.posts.length);
