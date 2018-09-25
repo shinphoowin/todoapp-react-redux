@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PostForm from './PostForm';
+import AllPost from './AllPost';
 
 class App extends Component {
   render() {
@@ -9,6 +10,7 @@ class App extends Component {
           <h4 className="App-title" style={{color:'#aaa'}}>codebrush react-redux crud test</h4>
         </header>
         <PostForm/>
+        <AllPost/>
       </div>
     );
   }

@@ -72,12 +72,6 @@ class PostForm extends Component{
 
       		<button>Submit</button>
       	</form>
-
-      	<hr/>
-      	<ul style={{padding:0}}>
-      	  <h2>All Posts</h2>
-      	 {getpost}
-      	</ul>
       </div>
 		)
 	}
