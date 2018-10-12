@@ -5,9 +5,19 @@ export const addTodo = text => ({
 	text
 })
 
-export const setVisilityFilter = dofilterspw => ({
+export const deleteTodo = id => ({
+  type: 'DELETE_TODO',
+  id
+})
+
+export const editTodo = id => ({
+  type: 'EDIT_TODO',
+  id
+})
+
+export const setVisilityFilter = dofilter => ({
 	type: 'SET_VISIBILITY_FILTER',
-	dofilterspw
+	dofilter
 })
 
 export const toggleTodo = id => ({

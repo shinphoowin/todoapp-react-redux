@@ -24,9 +24,10 @@ const AddTodo = ({ dispatch }) => {
           dispatch(addTodo(input.value))
           input.value = ''
         }}
+        style={{position:'relative'}}
       >
-    		<input ref={node => input = node} style={{ float: 'left',marginRight: '8px'}}/>
-    		<button type="submit">Add Todo</button>
+    		<input ref={node => input = node} id="new-todo" placeholder="What needs to be done?"/>
+    		<button type="submit" className="submitbtn">&#x2705;</button>
     	</form>
     </div>
 	);

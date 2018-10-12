@@ -6,8 +6,8 @@ import VisibleTodoList from './components/VisibleTodoList';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <h4>Redux CRUD Basic</h4>
+      <div>
+        <h4 className="header">Task List App&nbsp;(React-Redux)</h4>
         <AddTodo/>
         <VisibleTodoList/>
         <Footer/>

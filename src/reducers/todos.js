@@ -6,9 +6,20 @@ const todos = (state=[], action) => {
       {
       	id: action.id,
       	text: action.text,
-      	completed: false
+      	completed: false,
+      	editing: false
       }
 		]
+		case 'DELETE_TODO':
+		  return state.filter((what) => what.id !== action.id)
+		case 'EDIT_TODO':
+		  return state.map((todo) => 
+		  	todo.id === action.id 
+		  	? {
+		  		...todo,
+          editing: !todo.editing
+		  	}
+		  	: todo)
 		case 'TOGGLE_TODO':
 		  return state.map(todo =>
         (todo.id === action.id)
@@ -18,6 +29,18 @@ const todos = (state=[], action) => {
         	}
         : todo
 		  )
+		  case 'UPDATE_TODO':
+  	  return state.map((todo) =>
+        todo.id === action.id
+        ? {
+        	...todo,
+        	title: action.formObj.newtitle,
+        	message: action.formObj.newmessage,
+        	editing: !todo.editing
+        }
+        :
+          todo
+  	  	);
 		default:
 		  return state
 	}
