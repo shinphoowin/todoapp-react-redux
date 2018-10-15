@@ -2,19 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import postReducer from './PostReducer';
+import { rootReducer } from '././reducers';
 
-const store = createStore(postReducer);
-console.log(store);
-console.log(store.getState());
+const store = createStore(rootReducer);
 
 ReactDOM.render(
   <Provider store={store}>
 	  <App/> 
 	</Provider>,
-	document.getElementById('root'));
-
+	document.getElementById('todoapp'));
 //https://codeburst.io/redux-a-crud-example-abb834d763c9

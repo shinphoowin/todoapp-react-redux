@@ -47,8 +47,12 @@ class PostForm extends Component{
 			  	<div key={post.id}>
             <h2>{post.title}</h2>
             <p>{post.message}</p>
+<<<<<<< HEAD
             <button onClick={() => this.props.dispatch({type: 'EDIT_POST',id: post.id})}>Edit</button>
             <button onClick={()=>this.props.dispatch({type: 'DELETE_POST',id: post.id})}>Delete</button>
+=======
+  
+>>>>>>> react-redux-crud
             {console.log(post.editing)}
           </div>
         }
@@ -72,12 +76,6 @@ class PostForm extends Component{
 
       		<button>Submit</button>
       	</form>
-
-      	<hr/>
-      	<ul style={{padding:0}}>
-      	  <h2>All Posts</h2>
-      	 {getpost}
-      	</ul>
       </div>
 		)
 	}

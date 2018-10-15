@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 const postReducer = (state=[],action) => {
+=======
+const postReducer = (state=[], action) => {
+>>>>>>> react-redux-crud
 	console.log(action.formObj)
   switch(action.type){
   	case 'ADD_POST':
   	  return state.concat([action.formObj]);
   	case 'DELETE_POST':
+<<<<<<< HEAD
   	  return state.filter((post) => post.id !== action.id);
   	case 'EDIT_POST':
   	  return state.map((post) =>
@@ -14,6 +19,18 @@ const postReducer = (state=[],action) => {
   	    }
   	    :
   	      post
+=======
+  	  return state.filter((todo) => todo.id !== action.id);
+  	case 'EDIT_POST':
+  	  return state.map((todo) =>
+  	    todo.id === action.id 
+  	    ? {
+  	    	...todo,
+  	    	editing: !todo.editing
+  	    }
+  	    :
+  	      todo
+>>>>>>> react-redux-crud
   	    );
   	// case 'UPDATE_POST':
   	//   return state.map((post) => {
