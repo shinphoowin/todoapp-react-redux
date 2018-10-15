@@ -51,7 +51,7 @@ body {
 }
 
 #todoapp {
-	background: #fff;
+	background: #000;
 	margin: 65px 0 40px 0;
 	position: relative;
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
@@ -377,6 +377,12 @@ html .clear-completed:active {
 .halfwidth-floatLeft{
 	width: 50%;
 	float: left;
+}
+
+.editing button.submitbtn{
+	right: 36px;
+  font-size: 22px;
+  top: 4px;
 }
 
 /*

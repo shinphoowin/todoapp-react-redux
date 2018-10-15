@@ -8,13 +8,6 @@ class EditComponent extends Component{
 		e.preventDefault();
 		const newtitle = this.refs.getTitle.value;
 		const newmessage = this.refs.getMessage.value;
-		// const title1 = this.getTitle1.value;
-  //   const message1 = this.getMessage1.value;
-
-		// const formObj = {};
-		// formObj.title = title;
-		// formObj.getMessage = getMessage;
-		// console.log(formObj);
 
 		const formObj = {
 			newtitle,
@@ -42,13 +35,6 @@ class EditComponent extends Component{
 		)
 	}
 }
-
-const mapStateToProps = (state) => {
-  return {
-  	posts: state
-  }
-}
-
-export default connect(mapStateToProps)(EditComponent);
+export default connect()(EditComponent);
 //by using this , we can use this.props.dispatch() funtion
 // export default PostForm;

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {deleteTodo, toggleTodo, editTodo} from './../actions';
+import {deleteTodo, toggleTodo} from './../actions';
 import { connect } from 'react-redux';
 import Todo from './Todo';
 import EditComponent from './EditComponent';
@@ -9,14 +9,13 @@ const TodoList = ({ todos, dispatch }) => {
 	return(
     <ul id="todo-list">
     	{todos.map(todo =>
-      <li className={ todo.completed ? 'completed': ''}> 
-      {console.log(todo)}
-        <div className="view" key={todo.id}>	
+      <li key={todo.id} className={ todo.completed ? 'completed': ''}> 
+        <div className="view">	
           <input className="toggle" type="checkbox" onClick={() => dispatch(toggleTodo(todo.id))} checked={todo.completed ? true : false}/>  
           {todo.editing
-          	? <EditComponent editing={todo.editing} inputval={todo.text} key={todo.id} todo={todo} onKeyPress={this.handleKeyPress}/> 
-          	: <Todo gettodo={todo.text} key={todo.id} todo={todo} />
-          }
+          	? <EditComponent key={todo.id} todo={todo}/> 
+          	: <Todo key={todo.id} todo={todo} />
+          }          
           <div className="destroy" onClick={() => dispatch(deleteTodo(todo.id))}>&times;</div>
         </div>
       </li>      

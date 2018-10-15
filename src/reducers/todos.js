@@ -34,8 +34,7 @@ const todos = (state=[], action) => {
         todo.id === action.id
         ? {
         	...todo,
-        	title: action.formObj.newtitle,
-        	message: action.formObj.newmessage,
+        	text: action.formObj.newtask,
         	editing: !todo.editing
         }
         :
